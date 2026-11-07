@@ -71,8 +71,8 @@ const PRODUCTS=[
 {id:2,name:"Sambar Podi",ml:"സാമ്പാർ പൊടി",price:40,weight:"100 gram",image:"assets/product-2.svg"},
 {id:3,name:"Achar",ml:"അച്ചാർ",price:50,weight:"1 packet · 100 gram",image:"assets/product-3.svg"},
 {id:4,name:"Masala Avil",ml:"മസാല അവിൽ",price:60,weight:"100 gram",image:"assets/product-4.svg"},
-{id:5,name:"Pooram Varuthathu",ml:"പൂരം വരുത്തത്",price:50,weight:"100 gram",image:"assets/product-5.svg"},
-{id:6,name:"Thenga Varuthathu",ml:"തേങ്ങ വരുത്തത്",price:50,weight:"100 gram",image:"assets/product-6.svg"}];
+{id:5,name:"Pooram Varuthathu",ml:"പൂരം വറുത്തത്",price:50,weight:"100 gram",image:"assets/product-5.svg"},
+{id:6,name:"Thenga Varuthathu",ml:"തേങ്ങ വറുത്തത്",price:50,weight:"100 gram",image:"assets/product-6.svg"}];
 let cart={};const money=n=>new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(n);
 function renderProducts(filter=""){const list=PRODUCTS.filter(p=>(p.name+" "+p.ml).toLowerCase().includes(filter.toLowerCase()));
 document.getElementById("productGrid").innerHTML=list.length?list.map(p=>`<div class="col-6 col-md-4"><article class="card product-card">
