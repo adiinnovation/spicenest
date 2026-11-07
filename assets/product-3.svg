@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 520" role="img" aria-label="Achar 100 gram Spice Nest packet">
+<defs>
+ <linearGradient id="foil" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffef7"/><stop offset=".48" stop-color="#f4e7c9"/><stop offset="1" stop-color="#fffdf5"/></linearGradient>
+ <linearGradient id="band" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#176b3b"/><stop offset="1" stop-color="#4a071f"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<ellipse cx="210" cy="484" rx="150" ry="16" fill="#4c321b" opacity=".16" filter="url(#shadow)"/>
+<!-- sealed pouch -->
+<path d="M65 32 Q210 20 355 32 L369 448 Q210 472 51 448 Z" fill="url(#foil)" stroke="#c9ad78" stroke-width="4"/>
+<path d="M65 32 Q210 20 355 32 L359 58 Q210 72 61 58 Z" fill="#e8bf45" stroke="#c39a44" stroke-width="2"/>
+<path d="M54 435 Q210 454 366 435 L369 448 Q210 472 51 448 Z" fill="#176b3b"/>
+<path d="M75 72 Q210 84 345 72 L350 104 Q210 116 70 104 Z" fill="#fff" stroke="#dfcfad" stroke-width="2"/>
+<!-- brand mark -->
+<g transform="translate(210 115)">
+ <path d="M-38 7 Q-12 31 20 7 Q-2 45 -38 7Z" fill="#4a071f"/>
+ <path d="M-22 0 Q-44 -24 -53 -4 Q-38 17 -22 0Z" fill="#176b3b"/>
+ <path d="M-4 -5 Q-6 -35 10 -34 Q19 -15 -4 -5Z" fill="#176b3b"/>
+ <path d="M15 0 Q31 -22 43 -8 Q34 12 15 0Z" fill="#176b3b"/>
+ <circle cx="5" cy="-41" r="5" fill="#ef6a22"/><circle cx="20" cy="-34" r="4" fill="#ef6a22"/>
+</g>
+<text x="210" y="163" text-anchor="middle" font-family="Georgia,serif" font-size="31" font-style="italic" font-weight="bold" fill="#4a071f">SPICE NEST</text>
+<rect x="72" y="184" width="276" height="158" rx="22" fill="url(#band)"/>
+<path d="M82 196 Q210 208 338 196" stroke="#e8bf45" stroke-width="3" fill="none"/>
+<text x="210" y="238" text-anchor="middle" font-family="sans-serif" font-size="27" font-weight="bold" fill="#fff">അച്ചാർ</text>
+<text x="210" y="277" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#fff">ACHAR</text>
+<!-- stylized spice / ingredient illustration -->
+<g transform="translate(210 313)">
+ <ellipse cx="0" cy="0" rx="84" ry="22" fill="#e8bf45" opacity=".9"/>
+ <path d="M-74 0 Q-50 -38 -20 -10 Q5 -45 35 -12 Q65 -32 77 0 Q48 27 0 23 Q-48 25 -74 0Z" fill="#176b3b" stroke="#6b3516" stroke-width="3"/>
+ <path d="M-55 -4 Q-25 -23 0 -3 Q30 -23 55 -4" stroke="#e8bf45" stroke-width="5" fill="none"/>
+ <circle cx="-27" cy="-2" r="7" fill="#f8d46c"/><circle cx="4" cy="-11" r="6" fill="#f8d46c"/><circle cx="32" cy="-2" r="7" fill="#f8d46c"/>
+</g>
+<!-- Kerala-inspired decorative border -->
+<path d="M88 369 Q210 390 332 369" stroke="#e8bf45" stroke-width="3" fill="none"/>
+<g fill="#176b3b" opacity=".9"><path d="M108 394 q-23 -26 -39 -8 q19 19 39 8Z"/><path d="M312 394 q23 -26 39 -8 q-19 19 -39 8Z"/></g>
+<rect x="155" y="401" width="110" height="34" rx="17" fill="#4a071f" stroke="#e8bf45" stroke-width="2"/>
+<text x="210" y="425" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#fff">100 g</text>
+<text x="210" y="462" text-anchor="middle" font-family="sans-serif" font-size="12" letter-spacing="2" fill="#80643d">TRADITIONAL KERALA FLAVOUR</text>
+</svg>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#50051f"><title>Spice Nest | Kerala Flavours</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<style>
+:root{--wine:#50051f;--wine2:#720d31;--green:#247326;--gold:#e9b83c;--cream:#fff8ec}
+*{box-sizing:border-box}body{margin:0;background:#fffaf2;color:#2c211d;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.navbar{background:#fffaf3;border-bottom:2px solid #eadfcf}.logo{width:250px;height:76px;object-fit:contain;object-position:center}
+.cart-nav{border:1px solid #e5d6c7;color:var(--wine);border-radius:30px;padding:8px 13px;background:white}
+.hero{background:linear-gradient(90deg,rgba(35,18,10,.82),rgba(35,18,10,.30)),url('assets/kerala-kitchen-banner.jpg') center/cover no-repeat;color:white;border-bottom:5px solid var(--gold);text-align:center;padding:38px 15px 34px;text-shadow:0 2px 8px #0008}
+.hero .eyebrow{color:#f5d783;letter-spacing:2px;text-transform:uppercase;font-size:.78rem;font-weight:800}
+.hero h1{font-family:Georgia,serif;font-size:clamp(1.8rem,5vw,2.7rem);font-weight:800;margin:7px 0}
+.hero p{margin:0;color:#fff3dc}.hero-points{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:16px}
+.hero-points span{border:1px solid #ffffff75;border-radius:30px;padding:6px 11px;font-size:.78rem}
+.section-title{color:var(--wine);font-weight:850}
+.product-card{height:100%;border:1px solid #eee1d1;border-radius:18px;overflow:hidden;background:white;box-shadow:0 5px 18px #4a071f0c}
+.product-image{height:220px;width:100%;object-fit:contain;background:linear-gradient(180deg,#fffdf8,#f8efdf);padding:8px}
+.product-card .card-body{padding:13px;display:flex;flex-direction:column}
+.product-malayalam{font-size:.95rem;color:#6a1833;font-weight:800}
+.product-name{font-size:1.05rem;font-weight:850;color:#30151e;margin:2px 0 4px}
+.product-weight{font-size:.88rem;color:#756b61}.price{font-size:1.2rem;font-weight:900;color:var(--wine)}
+.btn-add{background:var(--green);color:white;border:0;border-radius:10px;font-weight:750}.btn-add:hover{background:#195d1c;color:white}
+.feature-strip{background:#f8eedc;border-top:1px solid #eddfc8;border-bottom:1px solid #eddfc8}
+.feature{font-size:.86rem;font-weight:700;color:#49392d}.feature i{color:var(--green);font-size:1.35rem}
+.contact-strip{background:var(--wine);color:white}.contact-strip a{color:white;text-decoration:none}
+.cart-float{position:fixed;right:16px;bottom:18px;z-index:1030;border-radius:40px;box-shadow:0 7px 22px #0003;background:var(--wine);color:white;font-weight:750}
+.cart-float:hover{background:var(--wine2);color:white}.cart-line{padding:12px 0;border-bottom:1px solid #eee}.qty-btn{width:30px;height:30px;padding:0;border-radius:50%}
+@media(min-width:768px){.product-image{height:250px}}
+@media(max-width:400px){.logo{width:185px;height:58px}.product-image{height:175px}.product-card .card-body{padding:10px}.product-name{font-size:.96rem}.product-malayalam{font-size:.88rem}.product-weight{font-size:.8rem}.price{font-size:1.05rem}}
+</style></head><body oncontextmenu="return false">
+<nav class="navbar sticky-top"><div class="container py-1 d-flex justify-content-between align-items-center">
+<a href="#"><img src="assets/spice-nest-logo-transparent.png" class="logo" alt="Spice Nest"></a>
+<button class="cart-nav" data-bs-toggle="offcanvas" data-bs-target="#cartPanel"><i class="bi bi-bag"></i> <span class="d-none d-sm-inline">Cart</span> <span id="cartCount" class="badge rounded-pill text-bg-danger">0</span></button>
+</div></nav>
+<header class="hero"><div class="container">
+<div class="eyebrow">Traditional Kerala Flavours</div><h1>Spice Nest</h1><p>Authentic homemade spice products, carefully packed for your kitchen.</p>
+<div class="hero-points"><span><i class="bi bi-leaf me-1"></i>Homemade Taste</span><span><i class="bi bi-flower1 me-1"></i>Kerala Flavours</span><span><i class="bi bi-shield-check me-1"></i>No Added Preservatives</span><span><i class="bi bi-box-seam me-1"></i>Hygienic Packing</span></div>
+</div></header>
+<main class="container py-4 pb-5">
+<div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-3">
+<div><div class="small text-uppercase fw-bold" style="color:#9b7132;letter-spacing:1.5px">Explore our range</div><h2 class="section-title h3 mb-0">Our Products</h2></div>
+<div class="input-group" style="max-width:420px"><span class="input-group-text bg-white"><i class="bi bi-search"></i></span><input id="searchInput" class="form-control" placeholder="Search products..." aria-label="Search products"></div>
+</div><div class="row g-3" id="productGrid"></div></main>
+<section class="feature-strip py-3"><div class="container"><div class="row text-center g-3">
+<div class="col-6 col-md-3 feature"><i class="bi bi-flower1 d-block"></i>Authentic Kerala Taste</div>
+<div class="col-6 col-md-3 feature"><i class="bi bi-patch-check d-block"></i>Quality Ingredients</div>
+<div class="col-6 col-md-3 feature"><i class="bi bi-truck d-block"></i>Careful Packing</div>
+<div class="col-6 col-md-3 feature"><i class="bi bi-shield-check d-block"></i>Hygienic Preparation</div>
+</div></div></section>
+<footer class="contact-strip py-4"><div class="container text-center"><div class="fw-bold fs-5 mb-2">SPICE NEST</div>
+<div class="mb-2"><i class="bi bi-geo-alt-fill text-warning"></i> Perumpadappu, Kerala</div>
+<div class="mb-2"><i class="bi bi-telephone-fill text-warning"></i> <a href="tel:9061532015">9061532015</a> &nbsp; | &nbsp; <a href="tel:8943851416">8943851416</a></div>
+<div class="small opacity-75">Order your favourites through WhatsApp</div></div></footer>
+<button class="btn cart-float px-4 py-3" data-bs-toggle="offcanvas" data-bs-target="#cartPanel"><i class="bi bi-cart3 me-1"></i> View Cart <span id="floatCount" class="badge bg-warning text-dark">0</span></button>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartPanel"><div class="offcanvas-header border-bottom"><div><h5 class="fw-bold mb-0">Your Cart</h5><small class="text-secondary">Spice Nest order summary</small></div><button class="btn-close" data-bs-dismiss="offcanvas"></button></div>
+<div class="offcanvas-body d-flex flex-column"><div id="cartItems" class="flex-grow-1"></div><div class="border-top pt-3"><div class="d-flex justify-content-between fw-bold fs-5 mb-3"><span>Total</span><span id="cartTotal">₹0</span></div><button id="checkoutBtn" class="btn btn-success w-100 py-3 fw-bold"><i class="bi bi-whatsapp me-2"></i>Order through WhatsApp</button><p class="small text-secondary text-center mt-2">Confirm your order in WhatsApp.</p></div></div></div>
+<div class="modal fade" id="customerModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content rounded-4 border-0"><div class="modal-header"><h5 class="modal-title fw-bold">Delivery Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body"><form id="customerForm"><div class="mb-3"><label class="form-label">Customer name</label><input id="custName" class="form-control" required></div>
+<div class="mb-3"><label class="form-label">Mobile number</label><input id="custPhone" class="form-control" type="tel" required></div>
+<div class="mb-3"><label class="form-label">Delivery address</label><textarea id="custAddress" class="form-control" rows="3" required></textarea></div>
+<div class="mb-3"><label class="form-label">Additional note (optional)</label><input id="custNote" class="form-control"></div>
+<button class="btn btn-success w-100 py-2 fw-bold" type="submit"><i class="bi bi-whatsapp me-2"></i>Send order on WhatsApp</button></form></div></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const SHOP_NAME="Spice Nest",WHATSAPP_NUMBER="919061532015";
+const PRODUCTS=[
+{id:1,name:"Chamanti Podi",ml:"ചമന്തി പൊടി",price:40,weight:"100 gram",image:"assets/product-1.svg"},
+{id:2,name:"Sambar Podi",ml:"സാമ്പാർ പൊടി",price:40,weight:"100 gram",image:"assets/product-2.svg"},
+{id:3,name:"Achar",ml:"അച്ചാർ",price:50,weight:"1 packet · 100 gram",image:"assets/product-3.svg"},
+{id:4,name:"Masala Avil",ml:"മസാല അവിൽ",price:60,weight:"100 gram",image:"assets/product-4.svg"},
+{id:5,name:"Pooram Varuthathu",ml:"പൂരം വരുത്തത്",price:50,weight:"100 gram",image:"assets/product-5.svg"},
+{id:6,name:"Thenga Varuthathu",ml:"തേങ്ങ വരുത്തത്",price:50,weight:"100 gram",image:"assets/product-6.svg"}];
+let cart={};const money=n=>new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(n);
+function renderProducts(filter=""){const list=PRODUCTS.filter(p=>(p.name+" "+p.ml).toLowerCase().includes(filter.toLowerCase()));
+document.getElementById("productGrid").innerHTML=list.length?list.map(p=>`<div class="col-6 col-md-4"><article class="card product-card">
+<img src="${p.image}" class="product-image" alt="${p.name} packet" loading="lazy"><div class="card-body"><div class="product-malayalam">${p.ml}</div><div class="product-name">${p.name}</div>
+<div class="d-flex justify-content-between align-items-center mb-3 gap-1"><span class="product-weight">${p.weight}</span><span class="price">${money(p.price)}</span></div>
+<button class="btn btn-add w-100 mt-auto" onclick="addToCart(${p.id})"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button></div></article></div>`).join(""):`<div class="col-12 text-center text-secondary py-5">No products found.</div>`;}
+function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart();}
+function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];renderCart();}
+function total(){return PRODUCTS.reduce((s,p)=>s+p.price*(cart[p.id]||0),0);}
+function count(){return Object.values(cart).reduce((a,b)=>a+b,0);}
+function renderCart(){const selected=PRODUCTS.filter(p=>cart[p.id]),c=count();document.getElementById("cartCount").textContent=c;document.getElementById("floatCount").textContent=c;document.getElementById("cartTotal").textContent=money(total());
+document.getElementById("cartItems").innerHTML=selected.length?selected.map(p=>`<div class="cart-line d-flex gap-2 align-items-center"><img src="${p.image}" alt="" style="width:64px;height:64px;object-fit:contain;background:#fff8ec;border-radius:10px"><div class="flex-grow-1"><div class="fw-bold">${p.name}</div><small class="text-secondary">${p.weight} · ${money(p.price)} each</small><div class="d-flex align-items-center gap-2 mt-1"><button class="btn btn-outline-secondary qty-btn" onclick="changeQty(${p.id},-1)">−</button><b>${cart[p.id]}</b><button class="btn btn-outline-secondary qty-btn" onclick="changeQty(${p.id},1)">+</button></div></div><b>${money(p.price*cart[p.id])}</b></div>`).join(""):`<div class="text-center text-secondary py-5"><i class="bi bi-cart fs-1"></i><p class="mt-2">Your cart is empty.</p></div>`;
+document.getElementById("checkoutBtn").disabled=!selected.length;}
+document.getElementById("searchInput").addEventListener("input",e=>renderProducts(e.target.value));
+document.getElementById("checkoutBtn").addEventListener("click",()=>{bootstrap.Offcanvas.getOrCreateInstance(document.getElementById("cartPanel")).hide();bootstrap.Modal.getOrCreateInstance(document.getElementById("customerModal")).show();});
+document.getElementById("customerForm").addEventListener("submit",e=>{e.preventDefault();const selected=PRODUCTS.filter(p=>cart[p.id]);const customerName=document.getElementById("custName").value.trim(),customerPhone=document.getElementById("custPhone").value.trim(),customerAddress=document.getElementById("custAddress").value.trim(),customerNote=document.getElementById("custNote").value.trim();
+const now=new Date(),invoiceNo="SN-"+now.getFullYear()+String(now.getMonth()+1).padStart(2,"0")+String(now.getDate()).padStart(2,"0")+"-"+String(now.getHours()).padStart(2,"0")+String(now.getMinutes()).padStart(2,"0")+String(now.getSeconds()).padStart(2,"0"),dateText=now.toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"});
+const itemLines=selected.map((p,i)=>`${String(i+1).padStart(2,"0")}. *${p.name}*\n Pack: ${p.weight} | Qty: ${cart[p.id]}\n Rate: ${money(p.price)} | Amount: *${money(p.price*cart[p.id])}*`);
+const message=["━━━━━━━━━━━━━━━━━━━━","🌿 *SPICE NEST*","*ORDER INVOICE / ORDER REQUEST*","Traditional Kerala Flavours","━━━━━━━━━━━━━━━━━━━━",`*Invoice No:* ${invoiceNo}`,`*Date:* ${dateText}`,"*Order Status:* Awaiting shop confirmation","━━━━━━━━━━━━━━━━━━━━","*CUSTOMER DETAILS*",`Name: ${customerName}`,`Mobile: ${customerPhone}`,`Delivery Address: ${customerAddress}`,"━━━━━━━━━━━━━━━━━━━━","*ORDER ITEMS*",...itemLines,"━━━━━━━━━━━━━━━━━━━━",`*TOTAL QUANTITY:* ${count()} item(s)`,`*GRAND TOTAL: ${money(total())}*`,"━━━━━━━━━━━━━━━━━━━━","*PAYMENT:* To be confirmed by Spice Nest","*DELIVERY:* Please confirm availability and delivery charges.",customerNote?`*CUSTOMER NOTE:* ${customerNote}`:"","━━━━━━━━━━━━━━━━━━━━","*Thank you for choosing Spice Nest!* 🙏","Perumpadappu, Kerala","📞 9061532015 | 8943851416","Please reply to confirm this order."].filter(Boolean).join("\n");
+window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");});
+document.addEventListener("dragstart",e=>{if(e.target.tagName==="IMG")e.preventDefault();});
+document.querySelectorAll("img").forEach(img=>{img.draggable=false;});
+renderProducts();renderCart();
+</script></body></html>

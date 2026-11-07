@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 150" role="img" aria-label="Spice Nest logo">
+<rect width="560" height="150" rx="18" fill="#fffaf2"/>
+<g transform="translate(280 47)">
+ <path d="M-55 10 Q-18 48 37 10 Q5 65 -55 10Z" fill="#4a071f"/>
+ <path d="M-30 0 Q-70 -40 -83 -4 Q-62 28 -30 0Z" fill="#176b3b"/>
+ <path d="M-7 -8 Q-11 -54 12 -54 Q30 -23 -7 -8Z" fill="#176b3b"/>
+ <path d="M24 1 Q57 -34 72 -10 Q57 23 24 1Z" fill="#176b3b"/>
+ <circle cx="12" cy="-64" r="7" fill="#ef6a22"/><circle cx="34" cy="-53" r="6" fill="#ef6a22"/><circle cx="48" cy="-69" r="5" fill="#ef6a22"/>
+</g>
+<text x="280" y="128" text-anchor="middle" font-family="Georgia,serif" font-size="68" font-style="italic" font-weight="bold" letter-spacing="1" fill="#4a071f">SPICE NEST</text>
+</svg>
